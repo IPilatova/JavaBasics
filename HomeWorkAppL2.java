@@ -4,11 +4,14 @@ public class HomeWorkAppL2 {
 
     public static void main(String[] args) {
 
-        System.out.println(sumLimit(-10,31));
+        System.out.println(sumLimit(-10,20));
+        System.out.println("Результат выполнения задания 1 => " + sumLimit1(20,10));
 
         numValue (1);
 
         System.out.println(numValueBoolean(1));
+        String result = (isNegative(20)) ? "Number is negative" : "Number is positive";
+        System.out.println(result);
 
         forNumRaw("Строку, которую нужно написать n раз", 3);
 
@@ -22,6 +25,10 @@ public class HomeWorkAppL2 {
 
     public static boolean sumLimit(int a, int b) {
         return (a + b >= 10 && a + b <= 20);
+    }
+
+    public static boolean sumLimit1(int first, int second) {
+        return (first + second >= 10) && (first + second <= 20);
     }
 
 // 2. Написать метод, которому в качестве параметра передается целое число,
@@ -43,6 +50,10 @@ public class HomeWorkAppL2 {
         return (a < 0);
     }
 
+    public static boolean isNegative(int variable) {
+        return variable < 0;
+    }
+
 // 4. Написать метод, которому в качестве аргументов передается строка и число,
 //    метод должен отпечатать в консоль указанную строку, указанное количество раз;
 
@@ -57,18 +68,19 @@ public class HomeWorkAppL2 {
 //    и возвращает boolean (високосный - true, не високосный - false).
 //    Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
 
-//    public static boolean Year(int year) {
-//        return (year % 4 == 0);
+    public static boolean Year(int year) {
+        return (year % 4 == 0) && (year %100 !=0) || (year % 400 == 0);
+    }
+
+//    public static boolean Year(int year) { // Так делать НЕ НУЖНО
+//        if (year % 400 == 0) {
+//            return true;
+//        } else if (year % 100 == 0) {
+//            return false;
+//        } else if (year % 4 == 0) {
+//            return true;
+//        }
+//        return false;
 //    }
 
-    public static boolean Year(int year) {
-        if (year % 400 == 0) {
-            return true;
-        } else if (year % 100 == 0) {
-            return false;
-        } else if (year % 4 == 0) {
-            return true;
-        }
-        return false;
-    }
 }
